@@ -25,6 +25,7 @@ public class BookingController {
         return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
 
+    // comment
     @GetMapping("/allBookings")
     public ResponseEntity<?> getAllBookings() {
         return ResponseEntity.ok(bookingService.getAllBookings());
