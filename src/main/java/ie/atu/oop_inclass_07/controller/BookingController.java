@@ -6,10 +6,7 @@ import ie.atu.oop_inclass_07.service.BookingService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,8 +26,13 @@ public class BookingController {
     }
 
     @GetMapping("/allBookings")
-    public ResponseEntity<Booking> getAllBookings() {
+    public ResponseEntity<?> getAllBookings() {
         return ResponseEntity.ok(bookingService.getAllBookings());
+    }
+
+    @GetMapping("/BookingById")
+    public ResponseEntity<?> getBookingById(@Valid @RequestBody  Booking booking) {
+        return ResponseEntity.ok(bookingService.getBookingById(booking.getBookingId()));
     }
 
 

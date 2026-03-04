@@ -16,12 +16,15 @@ public class BookingService {
 
 
     public Booking addBooking(Booking booking) {
+
+        //if(booking.getStartHour()+booking.getDurationHours())
+
         booking.setBookingId(nextId++);
         bookings.add(booking);
         return booking;
     }
 
-    public List<Booking> getBookings() {
+    public List<Booking> getAllBookings() {
         return bookings;
     }
 

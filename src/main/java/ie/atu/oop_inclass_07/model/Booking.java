@@ -27,10 +27,13 @@ public class Booking {
     @Email(message = "Invalid email address")
     public String studentEmail;
 
+    @NotBlank
     public Date bookingDate;
 
+    @NotBlank
     public Time startHour;
 
+    @NotBlank
     public Duration durationHours;
 
 
