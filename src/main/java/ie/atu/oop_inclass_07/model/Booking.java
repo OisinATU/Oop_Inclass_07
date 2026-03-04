@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Time;
+import java.time.Duration;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Getter
@@ -15,8 +17,8 @@ import java.util.Date;
 public class Booking {
 
 
-    @Schema
-    public int bookingId;
+    //@Schema
+    public long bookingId;
 
     @NotBlank(message = "Tag cannot be blank")
     public String bookingTag;
@@ -29,7 +31,7 @@ public class Booking {
 
     public Time startHour;
 
-    public Time durationHours;
+    public Duration durationHours;
 
 
 
